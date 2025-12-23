@@ -1,0 +1,98 @@
+API
+ 
+REGISTER SCRIPT 
+
+SEND OTP
+http://localhost/data/vypar/login.php?no=7440478319
+PARAMETERS - GET
+{no} - login number
+Server Answer
+{"status":"Success","respMessage":"OTP Sent ","statusCode":"L102","isMpinSet":1,"isTouchIdSet":,"isFaceIdSet":,"updateType":"noupdate","sessionId":"f9246ff2-3c72-44a2-b876-6d56e43d5a90","mobileNumber":"7440478319","loginName":"BIPLAB SARKAR","loginType":"MobileNumber","signUpStatus":"Completed","deviceid":"51f3b9a418edfc5a"}
+
+VERIFY OTP
+http://localhost/data/vypar/vf.php?no=7440478319&otp=your_otp&sessionId=$sessionId&$device_id=$device_id		
+PARAMETERS - GET
+{no} - login number		
+{otp} - your otp		
+{sessionid} - $sessionId	
+Server Answer
+{"status":"Success","respMessage":"Success","deviceid":"296a0fa5857bd803","statusCode":"S101"}
+
+
+ LOGIN ACCOUNT
+ 
+SESION ID
+ http://localhost/data/vypar/sesion.php?no=7063541464&device=12545d84589c7d63
+ PARAMETERS - GET
+{no} - login number		
+{device} - your DEVICE ID 		
+Server Answer
+{"status":"Success","respMessage":"Success","statusCode":"S101","isMpinSet":1,"isTouchIdSet":,"isFaceIdSet":,"updateType":"noupdate","sessionId":"be75b3fe-cbb5-49c9-a5cf-7f173c168900","mobileNumber":"7063541464","loginName":"BIPLAB SARKAR","loginType":"MobileNumber","signUpStatus":"Completed"}
+MUST CHECK respMessage IS Success
+  
+ PIN VERIFY
+http://localhost/data/vypar/pin.php?no=7063541464&pin=7492&sessionid=484ee322-2d79-46e0-b244-d5955d1e312e
+ PARAMETERS - GET
+{no} - login number		
+{pin} - MPIN		
+{sessionid} - your SESSION ID		
+Server Answer
+{"status":"Success","respMessage":"Success","statusCode":"S101"}
+
+User Details
+http://localhost/data/vypar/userdtl.php?no=7063541464&sessionid=484ee322-2d79-46e0-b244-d5955d1e312e
+PARAMETERS - GET
+{no} - login number			
+{sessionid} - your SESSION ID		
+Server Answer
+{"status":"Success","respMessage":"Success","statusCode":"S101","terminalInfo":[{"39619366":{"city":"MALDA","location":"MALDA - BHIRABNATH ABASAN","address":"KHEJURIA NEW COLONY nh 34 kali temple , kali temple, MALDA, West Bengal-732215","mid":"719366","cid":"1751771","dba":"BIPLAB SARKAR","companyName":"BIPLAB SARKAR","accountNumber":"AQICAHheGvkgbzo7I4ho8ZnZTUzkwn83dQW9mrpkCtdzpsNmHAHVUjufvJvZv+O3XFdrqIqNAAAAbDBqBgkqhkiG9w0BBwagXTBbAgEAMFYGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMRQNMf9LAfl/6VVlVAgEQgCkFAbMbdvlaaWl1+NL3bPfy6XTuK8Vs/odhCnVYHuBwAbF17qiKQgjk4A==","role":"owner","tidStatus":"Active","bankProduct":{"etbMdr":false,"OAR":false,"instantUpiSettlement":false,"V2P":false,"MAC":false,"etbOnboarding":false},"pinCode":"732215","segments":["399","492","387","418","433","457","409","248"],"roleStatus":"Active","moduleConsents":{"ETB Onboarding":true,"ETB MDR":true},"assetType":null,"tprogramOffered":null,"mccCode":"5311","payments":{"cards":null,"smsPay":{"status":"Active","providerName":"CCAvenue","providerId":1},"cash":{"status":"Active"},"upi":{"status":"Active","providerName":"HDFC","providerId":1,"vpa":null},"qr":{"status":"Active","providerName":"HDFC","providerId":1,"staticQRPath":null,"digitalStaticQRPath":"https://hdfcstaticqr-softcopy.s3.ap-south-1.amazonaws.com/DigitalStaticQR/39619366","staticQRStatus":2,"rupayPan":"6100030396193669","masterPassPan":"5220240396193661","mpan":"4403843961936604"},"payLater":{"status":"Active"}}}}]}
+
+PAYMENT INFO 
+
+TOTAL PAYMENT 
+http://localhost/data/vypar/totalpayment.php?no=&tidList=39619366&sessionid=c610a30e-969e-4f33-a839-663946dfeaad&startDate=2023-09-20&endDate=2023-09-20
+PARAMETERS - GET
+{no} - login number		
+{tidList} - 	CHECK terminalInfo tidList
+{sessionid} - your SESSION ID		
+{startDate} - 	2023-09-20 (dateformet)
+{endDate} -  2023-09-20	
+Server Answer
+{"status":"Success","message":"Data Available","errorCode":"L115","saleCounterList":[{"mid":null,"saleAmount":1.00,"saleCount":1,"plAmount":0,"plCount":0,"totalAmount":1.00,"totalCount":1,"area":null,"tid":"39619366"}]}
+
+transaction  details
+http://localhost/data/vypar/hs.php?no=&tidList=39619366&sessionid=c610a30e-969e-4f33-a839-663946dfeaad&startDate=2023-09-20&endDate=2023-09-20
+PARAMETERS - GET
+{no} - login number		
+{tidList} - 	CHECK terminalInfo tidList
+{sessionid} - your SESSION ID		
+{startDate} - 	2023-09-20 (dateformet)
+{endDate} -  2023-09-20	
+Server Answer
+{"status":"Success","message":"Data Available","errorCode":"S101","paymentModeSummary":[{"paymentType":"UPI","status":"SaleFailed","amount":1.00,"count":1,"cardNetwork":null,"terminalId":null,"subType":"UPI Collect"},{"paymentType":"BharatQR","status":"SaleSuccess","amount":1.00,"count":1,"cardNetwork":null,"terminalId":null,"subType":"BharatQR-UPI"},{"paymentType":"UPI","status":"InProgress","amount":10.00,"count":1,"cardNetwork":null,"terminalId":null,"subType":"UPI Collect"},{"paymentType":"PayLater","status":"Pending","amount":0.00,"count":0,"cardNetwork":null,"terminalId":null,"subType":"NA"}],"plCount":null,"plAmount":null,"saleCount":null,"saleAmount":null,"totalCount":"1","totalAmount":"1.00"}
+
+miniStatement + merchant-txn-detail
+http://localhost/data/vypar/miniStatement.php?no=&tidList=39619366&sessionid=c610a30e-969e-4f33-a839-663946dfeaad&startDate=2023-09-20&endDate=2023-09-20&count=3
+PARAMETERS - GET
+{no} - login number		
+{tidList} - 	CHECK terminalInfo tidList
+{sessionid} - your SESSION ID		
+{startDate} - 	2023-09-20 (dateformet)
+{endDate} -  2023-09-20	
+{count} -  how much txn you see 
+Server Answer
+{"status":"Success","message":"Data Available","errorCode":"L115","transactionParams":[{"txnid":"28645891695219667481","requestTime":"20-09-2023 19:51:07","amount":"10.00","paymentType":"2","status":"2","txnmessage":"Transaction Collect request initiated successfully","cardNumber":null,"payerVpa":"sudi@paytm","customerMobile":"8016153778","description":"merchant entered","refundstate":"0","utr":"79312763649","paymentApp":"Paytm","cardNetwork":null,"qrPaymentMode":null,"cardHolderName":null,"endTime":null,"terminalId":"39619366","providerName":"HDFC","subType":"UPI Collect","sortTime":"20-09-2023 19:51:07","ptxnid":null,"issuerRefNo":"null","merchantVPA":"biplabsarkar.39619366@hdfcbank","redemptionList":[],"upiSettlementType":null},{"txnid":"29358771695192204977","requestTime":"20-09-2023 12:13:23","amount":"1.00","paymentType":"3","status":"3","txnmessage":"Transaction success","cardNumber":null,"payerVpa":"biplab74442@ybl","customerMobile":"7063541464","description":"Digital Static QR","refundstate":"0","utr":"79280444126","paymentApp":"Phonepe","cardNetwork":null,"qrPaymentMode":"UPI","cardHolderName":null,"endTime":"20-09-2023 12:13:23","terminalId":"39619366","providerName":"HDFC","subType":"BharatQR-UPI","sortTime":"20-09-2023 12:13:23","ptxnid":null,"issuerRefNo":"326308230172","merchantVPA":"BIPLABSARKAR.39619366@HDFCBANK","redemptionList":[],"upiSettlementType":"T+1D"},{"txnid":"59126681695192065698","requestTime":"20-09-2023 12:11:05","amount":"1.00","paymentType":"2","status":"4","txnmessage":"Transaction fail","cardNumber":null,"payerVpa":"7063541464@ybl","customerMobile":"7063541464","description":"merchant entered","refundstate":"0","utr":"79280330139","paymentApp":"Phonepe","cardNetwork":null,"qrPaymentMode":null,"cardHolderName":null,"endTime":"20-09-2023 12:11:05","terminalId":"39619366","providerName":"HDFC","subType":"UPI Collect","sortTime":"20-09-2023 12:11:05","ptxnid":null,"issuerRefNo":"326392490449","merchantVPA":null,"redemptionList":[],"upiSettlementType":"T+1D"}]}
+
+					                                                                 
+UPI PAYMENT REQUEST
+http://localhost/data/vypar/upirequest.php?no=&tidList=39619366&sessionid=c610a30e-969e-4f33-a839-663946dfeaad&amount=10&cnumber=8016151248&upi=upi@paytm
+PARAMETERS - GET
+{no} - login number		
+{tidList} - 	CHECK terminalInfo tidList
+{sessionid} - your SESSION ID		
+{amount} - 	ex 10 only for (10,100,1000)   dont try (10.20  , 100.95  , 45.22)
+{cnumber} -  coustomer number
+{upi} -  upi id
+Server Answer
+{"status":"InProgress","statusMessage":"InProgress","statusCode":"S103","mTxnid":"24766441695221897801","merchantVPA":"BIPLABSARKAR.39619366@HDFCBANK"}
+																								 

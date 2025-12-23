@@ -1,0 +1,61 @@
+License Agreement
+
+UPI Payment Gateway Source Code - Terms and Conditions
+
+This UPI Payment Gateway Source Code ("the Code") has been developed by the CXR Team. By using or integrating this Code into your project, you agree to the following terms and conditions:
+
+Ownership: The Code is the intellectual property of the CXR Team and is protected by copyright laws. You are granted a non-exclusive, non-transferable license to use this Code solely for your project.
+
+Usage: You may use the Code in your project for personal or commercial purposes. However, you may not distribute, sublicense, or sell the Code as a standalone product.
+
+Modifications: You are allowed to modify the Code to suit your project's specific requirements. Any modifications made to the Code remain your responsibility and should not infringe upon the original ownership.
+
+Attribution: While not mandatory, it is appreciated if you give appropriate credit to the CXR Team for the Code used in your project. You may include a mention or link to the CXR Team's website or repository.
+
+Warranty: The Code is provided "as is," without any warranty or guarantee of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose.
+
+Liability: The CXR Team shall not be liable for any damages or liabilities arising from the use of the Code in your project. You assume all risk and responsibility for the Code's integration and use.
+
+Termination: The CXR Team reserves the right to terminate or revoke this license at any time, without prior notice, if the terms and conditions are violated.
+
+#########################################################################################################################################################################
+
+Disclaimer:
+
+This All-in-One UPI Payment Gateway source code is exclusively compatible with CXRHosting and Hostinger. Please note that different hosting providers may have varying resources and configurations.
+
+Important Points:
+
+Hosting Compatibility:
+
+This source code is optimized for seamless functionality only on CXRHosting and Hostinger platforms. Compatibility with other hosting providers is not guaranteed.
+Resource Configuration:
+
+Ensure your hosting plan meets the necessary resource requirements for optimal performance. Inadequate resources may lead to suboptimal functionality.
+Technical Support Scope:
+
+Our technical support is limited to the original, unmodified source code deployed on CXRHosting and Hostinger. Modifications may affect support eligibility.
+Code Modifications:
+
+We are not responsible for issues arising from any modifications made to the source code. Modifying the code may compromise its stability and security.
+Security Measures:
+
+Users are encouraged to adhere to recommended security practices. Any breach resulting from inadequate security measures is the user's responsibility.
+Third-Party Integration:
+
+Integration with third-party services not explicitly mentioned in our documentation is beyond our support scope. Users are advised to exercise caution when implementing such integrations.
+Backup and Recovery:
+
+Regularly back up your system to prevent data loss. We are not responsible for any loss of data due to unforeseen circumstances or insufficient backup procedures.
+Software Updates:
+
+Regularly check for updates and patches released by our development team. Using outdated versions may expose your system to vulnerabilities.
+Compliance with Legal Regulations:
+
+Users are responsible for ensuring that their usage of this code complies with all relevant legal regulations and requirements.
+End-User Responsibility:
+
+End-users are solely responsible for their deployment and usage of this source code. Any issues arising from misuse or non-compliance are not the responsibility of the code developers.
+
+
+################################################################################################################################################################################
